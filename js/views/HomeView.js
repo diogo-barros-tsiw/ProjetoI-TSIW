@@ -4,40 +4,48 @@ export default class UserView {
     constructor() {
         this.userController = new UserController();
 
-        // Gestão do form de login
+        // Gestão da Landing Page
+        /*
         this.frmLogin = document.querySelector('#frmLogin');
         this.loginUsername = document.querySelector('#txtUsername');
         this.loginPassword = document.querySelector('#txtPassword');
         this.loginMessage = document.querySelector('#loginMessage')
         this.bindLoginForm()
+        */
 
 
-        // Gestão do form de registo
+        // Gestão do Dashboard
+        /*
         this.frmRegister = document.querySelector('#frmRegister');
         this.registerUsername = document.querySelector('#txtUsernameRegister');
         this.registerPassword = document.querySelector('#txtPasswordRegister');
         this.registerPassword2 = document.querySelector('#txtPasswordRegister2');
         this.registerMessage = document.querySelector('#registerMessage')
         this.bindRegisterForm();
+        */
 
-        // Gestão dos botões da navbar
-        this.loginButton = document.querySelector('#btnLogin');
+        // Gestão do Conteúdo Home
+        this.landingPage = document.querySelector('#landing-page');
+
+        /*
         this.registerButton = document.querySelector('#btnRegister');
         this.logoutButton = document.querySelector('#btnLogout');
         this.bindLogout();
+        */
 
-
-        this.landingPage = document.querySelector('#landing-page');
-        this.dashboard = document.querySelector('#dashboard');
 
         // Atualiza botões tendo em conta se o user está autenticado ou não
         this.updateStatusUI();
     }
 
+    hideLandingPage(){
+        console.alert("beep bop")
+    }
+
     /**
      * Função que define um listener para o botão de registo
      */
-    bindRegisterForm() {
+    bindLandingPage() {
         this.frmRegister.addEventListener('submit', event => {
             event.preventDefault();
             try {
@@ -55,55 +63,7 @@ export default class UserView {
         })
     }
 
-    /**
-     * Função que define um listener para o botão de login
-     */
-    bindLoginForm() {
-        this.frmLogin.addEventListener('submit', event => {
-            event.preventDefault();
-            try {
-                this.userController.login(this.loginUsername.value, this.loginPassword.value);
-                this.displayMessage('login', 'User logged in with success!', 'success');
-                // Espera 1 seg. antes de fazer refresh à pagina
-                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => { location.reload() }, 1000);
-            } catch (err) {
-                this.displayMessage('login', err, 'danger');
-            }
-        });
-
-    }
-
-    /**
-     * Função que define um listener para o botão de logout
-     */
-    bindLogout() {
-        this.logoutButton.addEventListener('click', () => {
-            this.userController.logout();
-            location.reload()
-        })
-    }
-
-    /**
-     * Função que atualiza a visibilidade dos botões de acordo com a autenticação
-     */
-    updateStatusUI() {
-        if (this.userController.isLogged()) {
-            this.loginButton.style.display = 'none'
-            this.registerButton.style.display = 'none'
-            this.logoutButton.style.display = 'inline-block'
-
-            this.landingPage.style.display = 'none'
-            this.dashboard.style.display = 'block'
-        } else {
-            this.loginButton.style.display = 'inline-block'
-            this.registerButton.style.display = 'inline-block'
-            this.logoutButton.style.display = 'none'
-
-            this.landingPage.style.display = 'block'
-            this.dashboard.style.display = 'none'
-        }
-    }
+  
 
     /**
      * Função que define e exibe uma mensagem de sucesso ou de erro

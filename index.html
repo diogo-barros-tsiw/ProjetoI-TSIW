@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <title>Pandemic</title>
 
     <!-- REFERÊNCIA AO CSS DO BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+    <!-- custom css -->
+    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -17,24 +21,52 @@
     <!-- BARRA DE NAVEGAÇÃO -->
     <nav class="navbar bg-dark navbar-dark fixed">
         <div class="container-fluid">
-            <a class="navbar-brand">Pandemic</a>
-            <form class="d-flex">
+            <div class="container-logo">
+                <img class="navbar-logo" src="/img/pandemic_navbar.svg">
+                <a class="navbar-title navbar-brand">Pandemic</a>
+            </div>
+            <form class="d-flex justify-content-end">
                 <button id="btnLogin" class="btn btn-success" type="button" data-bs-toggle="modal"
                     data-bs-target="#mdlLogin">LOGIN</button>&nbsp;
                 <button id="btnRegister" class="btn btn-warning" type="button" data-bs-toggle="modal"
                     data-bs-target="#mdlRegister">REGISTER</button>
-                <button id="btnLogout" class="btn btn-danger" style="visibility: hidden;">LOGOUT</button>
+                <button id="btnLogout" class="btn btn-danger" style="display: none;">LOGOUT</button>
 
             </form>
         </div>
     </nav>
+
+    <div id="landing-page" class="container">
+
+        <div class="row">
+            <div class="welcome-container-description col-md-5">
+                <h1 class="display-3">All things pandemic, for kids.</h1>
+                <p class="lead">Pandemic is the app to entertain your kids while teaching them how to keep safe in the
+                    days of pandemic.</p>
+
+                <button id="btnRegisterHome" data-bs-toggle="modal" data-bs-target="#mdlRegister" type="button"
+                    class="home-register-button btn btn-primary">REGISTER NOW</button>
+            </div>
+            <div class="welcome-container-picture col-md-7">
+                <img id="welcome-vector" src="img/LandingWelcome.svg">
+            </div>
+        </div>
+    </div>
+
+    <div id="dashboard" class="row">
+
+        <div class="row">
+            <h1 class="display-3">Dashboard.</h1>
+            
+        </div>
+    </div>
+
     <!-- CATÁLOGO -->
+
     <!--
 
         <div class="container">
-    -->
-        <!-- CATÁLOGO: TITULOS -->
-        <!--
+
         <div class="row">
             <div class="col">
                 <h1 class="display-3">Activities Catalog</h1>
@@ -42,9 +74,6 @@
                 <hr class="my-2" />
             </div>
         </div>
-    -->
-        <!-- CATÁLOGO: FORMULÁRIO PARA FILTROS E ORDENAÇÃO -->
-        <!--
         <div class="row">
             <div class="col">
                 <form class="form-inline">
@@ -52,9 +81,9 @@
                         <label for="sltGenre">Genre: </label>
                         <select class="form-control m-2" name="" id="sltGenre">
                             <option value="">All</option>
-                            <option value="Pop-Rock">Pop-Rock</option>
-                            <option value="Metal">Metal</option>
-                            <option value="Jazz">Jazz</option>
+                            <option value="Pop-Rock">Game</option>
+                            <option value="Metal">Quiz</option>
+                            <option value="Jazz">True/False</option>
                         </select>
                     </div>
                     <div class="form-group m-2">
@@ -68,9 +97,7 @@
                 </form>
             </div>
         </div>
-    -->
-        <!-- CATÁLOGO: EXIBIÇÃO DAS ACTIVITYAS (VAZIO INICIALMENTE) -->
-        <!--
+
         <div class="row">
             <div class="col">
                 <hr class="my-2" />
@@ -78,7 +105,9 @@
             </div>
         </div>
     </div>
+
 -->
+
 
 
     <!-- MODAL REGISTO -->

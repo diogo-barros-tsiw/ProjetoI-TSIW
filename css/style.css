@@ -1,0 +1,89 @@
+/* Desktop */
+@media screen and (min-width: 768px) {
+    #welcome-vector {
+        padding: 2em;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    .welcome-container-picture {
+        position: relative;
+        height: calc(100vh - 40px - 1rem);
+    }
+    .welcome-container-description {
+        padding-top: 20vh;
+        position: relative;
+        height: calc(100vh - 40px - 1rem);
+    }
+    .home-register-button {
+        border-radius: 5em;
+        height: 3em;
+        padding-left: 2em;
+        padding-right: 2em;
+        background-color: aquamarine;
+        border: 0.5px solid aquamarine;
+    }
+    .home-register-button:hover {
+        background-color: darkgreen;
+        border: 0.5px solid darkgreen;
+    }
+
+    .container-logo{
+        margin-left: 1em;
+    }
+
+    .navbar-logo{
+        width: 40px;
+        padding: 2px;
+    }
+    .navbar-title{
+        margin-left: 5px;
+        vertical-align: middle;
+        margin-top: 20px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+    .container-logo{
+        margin-left: 1em;
+    }
+
+    .navbar-logo{
+        width: 40px;
+        padding: 2px;
+    }
+    .navbar-title{
+        margin-left: 5px;
+        vertical-align: middle;
+        margin-top: 20px;
+    }
+
+    #welcome-vector {
+        padding: 2em;
+        position: absolute;
+    }
+    .welcome-container-picture {
+        position: relative;
+
+    }
+    .welcome-container-description {
+        padding: 3em 5em 0em 3em;
+        position: relative;
+
+    }
+    .home-register-button {
+        border-radius: 5em;
+        height: 3em;
+        padding-left: 2em;
+        padding-right: 2em;
+        background-color: aquamarine;
+        border: 0.5px solid aquamarine;
+    }
+    .home-register-button:hover {
+        background-color: darkgreen;
+        border: 0.5px solid darkgreen;
+    }
+
+}
