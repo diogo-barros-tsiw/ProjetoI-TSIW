@@ -175,7 +175,7 @@ export default class NewActivityView {
 
                 // Espera 1 seg. antes de fazer refresh à pagina
                 // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => { location.href = "../index.html" }, 1000);
+                setTimeout(() => { location.href = "./../index.html" }, 1000);
             } catch (err) {
                 this.displayMessage(err, 'danger');
             }

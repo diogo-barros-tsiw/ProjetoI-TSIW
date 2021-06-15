@@ -43,31 +43,31 @@ export default class UserView {
 
     bindCreateActivity(){
         this.createActivityButton.addEventListener('click', () => {
-            location.href = 'html/newActivity.html';
+            location.href = '/html/newActivity.html';
         })
     }
 
     bindManageUsers(){
         this.manageUsersButton.addEventListener('click', () => {
-            location.href = 'html/manageUsers.html';
+            location.href = '/html/manageUsers.html';
         })
     }
 
     bindManageBadges(){
         this.manageBadgesButton.addEventListener('click', () => {
-            location.href = 'html/manageBadges.html';
+            location.href = '/html/manageBadges.html';
         })
     }
 
     bindManageItems(){
         this.manageItemsButton.addEventListener('click', () => {
-            location.href = 'html/manageItems.html';
+            location.href = '/html/manageItems.html';
         })
     }
 
     bindGoToLevelMenu() {
         this.playButton.addEventListener('click', () => {
-            location.href = 'html/levelMenu.html';
+            location.href = '/html/levelMenu.html';
         })
     }
 

@@ -44,11 +44,6 @@ export default class LevelMenuView {
         }
 
         this.levelContainer.innerHTML = html;
-
-
-        /*addEventListener('click', () => {
-            location.href = 'html/levelMenu.html';
-        })*/
     }
 
     openRow(html) {
