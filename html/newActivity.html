@@ -4,15 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyMusic - Add Activity</title>
+    <title>🐼 New Activity</title>
 
     <!-- REFERÊNCIA AO CSS DO BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+    <!-- custom css -->
+    <link href="./../css/style.css" rel="stylesheet">
+
 </head>
 
 <body>
+
     <div class="container-fluid">
         <!-- DIV A APARECER A UTILZADORES NÃO AUTENTICADOS -->
         <div id="userLoggedOutContent">
@@ -20,42 +24,60 @@
         </div>
         <!-- DIV A APARECER A UTILZADORES AUTENTICADOS (FORM DE ADIÇÃO DE ACTIVITYA) -->
 
+        <img id="return-arrow" src="../img/Arrow Left.svg">
+
         <div id="userLoggedInContent" style="visibility: hidden">
-            <h1 class="display-3">Add activity</h1>
-            <p class="lead">Add a activity that you enjoy!</p>
-            <hr class="my-2">
-            <div>
-                <form id="frmNewActivity">
-                    <div class="mb-3">
-                        <label for="txtName" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="txtName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="sltGenre" class="form-label">Genre</label>
-                        <select class="form-control" id="sltGenre">
-                            <option value="Jazz">Jazz</option>
-                            <option value="Metal">Metal</option>
-                            <option value="Pop-Rock">Pop-Rock</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtPhoto" class="form-label">Photo link</label>
-                        <input type="url" class="form-control" id="txtPhoto" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtDescription" class="form-label">Description</label>
-                        <textarea class="form-control" id="txtDescription" rows="3"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="txtVideo" class="form-label">Video Clip link</label>
-                        <input type="url" class="form-control" id="txtVideo">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="reset" class="btn btn-danger">Reset</button>
-                </form>
+            <div id="new-activity-container">
+
+                <h1 class="display-3">Add activity</h1>
+
+                <hr class="my-2">
+                <div>
+                    <form id="frmNewActivity">
+
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <label for="typeActTitle" class="form-label">Type of Activity</label>
+                                <select class="form-control" id="activity-type">
+                                    <option value="Jazz">Quiz</option>
+                                    <option value="Pop-Rock">True/False</option>
+                                    <option value="Metal">Game</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-2 mb-3">
+                                <label for="txtCoins" class="form-label">Activity ID</label>
+                                <input type="number" class="form-control" id="activity-id" required>
+                            </div>
+
+                            <div class="col-md-2 mb-3">
+                                <label for="txtPoints" class="form-label">Points Awarded</label>
+                                <input type="number" class="form-control" id="points-awarded" required>
+                            </div>
+
+                            <div class="col-md-2 mb-3">
+                                <label for="txtCoins" class="form-label">Coins Awarded</label>
+                                <input type="number" class="form-control" id="coins-awarded" required>
+                            </div>
+                        </div>
+
+                        <div id="level-questions-container" class="row">
+                            <div id="level-questions" class="row">
+
+                            </div>
+                            <div style="margin-top: 2em;" class="col">
+                                <button type="button" id="answer-add-button" class="btn btn-danger">Add
+                                    Question</button>
+                            </div>
+                        </div>
+
+                        <button style="margin-top: 2em;" type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <br>
+                <div id="newActivityMessage"></div>
             </div>
-            <br>
-            <div id="newActivityMessage"></div>
         </div>
     </div>
     <!-- REFERÊNCIA AO APP.JS -->

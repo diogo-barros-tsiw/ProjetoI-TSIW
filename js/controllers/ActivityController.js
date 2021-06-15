@@ -8,41 +8,58 @@ export default class ActivityController {
 
     }
 
-    create(name, genre, photo, description, video) {
-        if (!this.activities.some(activity => activity.name === name)) {
-            this.activities.push(new ActivityModel(name, genre, photo, description, video));
+    create(id, activityType, coinsAwarded, pointsAwarded, questions, requirement) {
+        if (!this.activities.some(activity => activity.id === id)) {
+            this.activities.push(new ActivityModel(id, activityType, coinsAwarded, pointsAwarded, questions, requirement));
             localStorage.setItem('activities', JSON.stringify(this.activities))
         } else {
-            throw Error(`Activity with name "${name}" already exists!`);
+            throw Error(`Activity with id "${id}" already exists!`);
         }
     }
 
-    remove(name) {
-        this.activities = this.activities.filter(activity => activity.name != name)
+    remove(id) {
+        this.activities = this.activities.filter(activity => activity.id != id)
         localStorage.setItem('activities', JSON.stringify(this.activities))
     }
 
-    setCurrentActivity(name) {
-        this.currentActivity = name
-        sessionStorage.setItem("activity", name);
+    setCurrentActivity(id) {
+        this.currentActivity = id
+        sessionStorage.setItem("activity", id);
     }
 
     getCurrentActivity() {
-        return this.activities.find(activity => activity.name == this.currentActivity)
+        return this.activities.find(activity => activity.id == this.currentActivity)
     }
 
-    getActivities(filterName = '', filterGenre = '', isSorted = false) {
+    activityExists(id) {
+
+        let i;
+        for (i = 0; i < this.activities.length; i++) {
+            if (this.activities[i].id == id) {
+                return true
+            }
+        }
+
+        return false
+    }
+
+
+    /*
+    getActivities(filterId = '', filterType = '', isSorted = false) {
         let filteredActivities = this.activities.filter(
             activity =>
-                (activity.name.toLowerCase().includes(filterName.toLowerCase()) || filterName === '')
+                (activity.id.includes(filterId()) || filterId === '')
                 &&
-                (activity.genre == filterGenre || filterGenre === '')
+                (activity.genre == filterType || filterType === '')
         )
 
         filteredActivities = isSorted ? filteredActivities.sort(this.#compare) : filteredActivities
 
         return filteredActivities
     }
+    */
+
+    /*
 
     #compare(activityA, activityB) {
         if (activityA.name > activityB.name)
@@ -51,5 +68,6 @@ export default class ActivityController {
             return -1;
         return 0;
     }
+    */
 
 }

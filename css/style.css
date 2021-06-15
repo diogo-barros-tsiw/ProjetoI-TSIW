@@ -1,4 +1,5 @@
 /* Desktop */
+
 @media screen and (min-width: 768px) {
     #welcome-vector {
         padding: 2em;
@@ -27,51 +28,321 @@
         background-color: darkgreen;
         border: 0.5px solid darkgreen;
     }
-
-    .container-logo{
+    .container-logo {
         margin-left: 1em;
     }
-
-    .navbar-logo{
+    .navbar-logo {
         width: 40px;
         padding: 2px;
     }
-    .navbar-title{
+    .navbar-title {
         margin-left: 5px;
         vertical-align: middle;
         margin-top: 20px;
+    }
+    #dashboard {
+        position: relative;
+        height: calc(100vh - 40px - 1rem);
+        width: 100vw;
+        margin: 0;
+    }
+    #dashboard-play-container {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 40px - 1rem);
+    }
+    #dashboard-play-button {
+        position: absolute;
+        width: calc(10em + 5vw);
+        height: calc(5em + 3vh);
+        font-size: 2rem;
+        border-radius: 1em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #admin-create-activity-container, #admin-manage-users-container, #admin-manage-badges-container, #admin-manage-items-container  {
+        position: relative;
+        width: 100%;
+        height: calc(16vh);
+    }
+    #admin-create-activity-button, #admin-manage-users-button, #admin-manage-badges-button, #admin-manage-items-button  {
+        position: absolute;
+        width: calc(10em + 5vw);
+        height: calc(2em + 2vh);
+        font-size: 2rem;
+        border-radius: 1em;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #level-container {
+        padding: 5vw 20vw;
+    }
+    .level-menu-button {
+        width: calc(100%);
+        height: calc(6em);
+    }
+    .level-menu-row {
+        margin-bottom: 24px;
+    }
+    #return-arrow {
+        cursor: pointer;
+        width: 3em;
+        position: fixed;
+        margin: 2em;
+        top: 0;
+        left: 0;
+    }
+    .menu-icon {
+        width: 5em;
+    }
+    #profile {
+        cursor: pointer;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        z-index: 10;
+    }
+    #leaderboard {
+        cursor: pointer;
+        position: absolute;
+        top: calc(5.5em);
+        right: 1em;
+        z-index: 10;
+    }
+    #shop {
+        cursor: pointer;
+        position: absolute;
+        top: calc(10em);
+        right: 1em;
+        z-index: 10;
+    }
+    .return-arrow-menu {
+        margin-top: calc(40px + 2.5em) !important;
+    }
+    #answer-add-button {
+        width: 100%;
+        height: 100%;
+    }
+
+    #new-activity-container{
+        margin: 10vh 20vw;
+        background-color: lightyellow;
+        padding: 5vh 5vw;
+        border-radius: 4px;
+        border: 1px solid grey;
+    }
+
+    #new-badge-container{
+        margin: 10vh 20vw;
+        background-color:powderblue;
+        padding: 5vh 5vw;
+        border-radius: 4px;
+        border: 1px solid grey;
+    }
+
+    .profile-info .row{
+        margin: 1em 0;
+        font-size: 1.25em;
     }
 }
 
-/* Mobile */
-@media screen and (max-width: 767px) {
+#first-star, #second-star, #third-star{
+    font-size: 3em;
+    text-align: center;
+}
 
-    .container-logo{
-        margin-left: 1em;
+#modal-results{
+
+    display: none;
+    background-color: papayawhip;
+    top: 10vh;
+    left: 20vw;
+    width: 60vw;
+    height: 80vh;
+    padding: 10%;
+    z-index: 15;
+    display: block;
+    position: fixed;
+}
+
+.score.margin{
+    margin-top: 3em;
+}
+
+.score{
+    width: calc(5em + 10vw);
+    position:absolute;
+    top: 0;
+
+    font-size: 1.5em;
+}
+
+.score.left{
+    left: 0;
+}
+
+.score.right{
+    right: 0;
+}
+
+.points{
+    text-align: left;
+    color: darkgreen
+}
+.coins{
+    text-align: right;
+    color: darkkhaki
+}
+
+.answers-container{
+    margin-top: 2em;
+}
+.answer{
+    min-height: 5em;
+    margin: 1em 0;
+}
+
+#quiz-level-questions{
+    margin: 10vh 20vw;
+        background-color: lightyellow;
+        padding: 5vh 5vw;
+        border-radius: 4px;
+        border: 1px solid grey;
+}
+
+#quiz-level-questions h1, #quiz-level-questions p, #quiz-level-questions label{
+    text-align: center;
+}
+
+#level-questions{
+    margin: 0;
+    padding: 0;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 767px) {
+    #answer-add-button {
+        width: 100%;
+        height: 100%;
+    }
+    .menu-icon {
+        width: 4em;
+    }
+    #profile {
+        cursor: pointer;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        z-index: 10;
+    }
+    #leaderboard {
+        cursor: pointer;
+        position: absolute;
+        top: 1em;
+        right: calc(4em);
+        z-index: 10;
+    }
+    #shop {
+        cursor: pointer;
+        position: absolute;
+        top: 1em;
+        right: calc(7.35em);
+        z-index: 10;
+    }
+    #return-arrow {
+        cursor: pointer;
+        width: 2em;
+        position: fixed;
+        margin: 1em;
+        top: 0;
+        left: 0;
+    }
+    .level-menu-row {
+        margin-bottom: 12px;
+    }
+    #level-container {
+        padding: 2vw 2vw;
+    }
+    .level-menu-button {
+        width: calc(100% - 1em);
+        margin-left: 0.5em;
+        height: calc(12vh);
+    }
+    #level-container .col {
+        padding: 0;
+    }
+    #dashboard {
+        position: relative;
+        height: calc(100vh - 40px - 1rem);
+        width: 100vw;
+        margin: 0;
     }
 
-    .navbar-logo{
+    #dashboard-admin {
+        position: relative;
+        height: calc(100vh - 40px - 1rem);
+        width: 100vw;
+        margin: 0;
+    }
+    #dashboard-play-container {
+        position: relative;
+        width: 100%;
+        height: calc(100vh - 40px - 1rem);
+    }
+
+
+    #dashboard-play-button {
+        position: absolute;
+        width: calc(10em + 5vw);
+        height: calc(5em + 3vh);
+        font-size: 2rem;
+        border-radius: 1em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #admin-create-activity-container, #admin-manage-users-container, #admin-manage-badges-container, #admin-manage-items-container  {
+        position: relative;
+        width: 100%;
+        height: calc(30vh - 40px - 1rem);
+    }
+    #admin-create-activity-button, #admin-manage-users-button, #admin-manage-badges-button, #admin-manage-items-button  {
+        position: absolute;
+        width: calc(10em + 5vw);
+        height: calc(3em + 3vh);
+        font-size: 2rem;
+        border-radius: 1em;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .container-logo {
+        margin-left: 1em;
+    }
+    .navbar-logo {
         width: 40px;
         padding: 2px;
     }
-    .navbar-title{
+    .navbar-title {
         margin-left: 5px;
         vertical-align: middle;
         margin-top: 20px;
     }
-
     #welcome-vector {
         padding: 2em;
         position: absolute;
     }
     .welcome-container-picture {
         position: relative;
-
     }
     .welcome-container-description {
         padding: 3em 5em 0em 3em;
         position: relative;
-
     }
     .home-register-button {
         border-radius: 5em;
@@ -85,5 +356,4 @@
         background-color: darkgreen;
         border: 0.5px solid darkgreen;
     }
-
 }

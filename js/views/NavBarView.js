@@ -93,15 +93,11 @@ export default class UserView {
             this.registerButton.style.display = 'none'
             this.logoutButton.style.display = 'inline-block'
 
-            this.landingPage.style.display = 'none'
-            this.dashboard.style.display = 'block'
         } else {
             this.loginButton.style.display = 'inline-block'
             this.registerButton.style.display = 'inline-block'
             this.logoutButton.style.display = 'none'
 
-            this.landingPage.style.display = 'block'
-            this.dashboard.style.display = 'none'
         }
     }
 

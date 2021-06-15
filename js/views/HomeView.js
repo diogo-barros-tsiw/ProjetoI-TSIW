@@ -4,35 +4,34 @@ export default class UserView {
     constructor() {
         this.userController = new UserController();
 
-        // Gestão da Landing Page
-        /*
-        this.frmLogin = document.querySelector('#frmLogin');
-        this.loginUsername = document.querySelector('#txtUsername');
-        this.loginPassword = document.querySelector('#txtPassword');
-        this.loginMessage = document.querySelector('#loginMessage')
-        this.bindLoginForm()
-        */
+        this.profile = document.querySelector('#profile');
+        this.shop = document.querySelector('#shop');
+        this.leaderboard = document.querySelector('#leaderboard');
 
 
-        // Gestão do Dashboard
-        /*
-        this.frmRegister = document.querySelector('#frmRegister');
-        this.registerUsername = document.querySelector('#txtUsernameRegister');
-        this.registerPassword = document.querySelector('#txtPasswordRegister');
-        this.registerPassword2 = document.querySelector('#txtPasswordRegister2');
-        this.registerMessage = document.querySelector('#registerMessage')
-        this.bindRegisterForm();
-        */
-
-        // Gestão do Conteúdo Home
+        this.adminPage = document.querySelector('#dashboard-admin');
         this.landingPage = document.querySelector('#landing-page');
+        this.dashboard = document.querySelector('#dashboard');
+        this.playButton = document.querySelector('#dashboard-play-button');
 
-        /*
-        this.registerButton = document.querySelector('#btnRegister');
-        this.logoutButton = document.querySelector('#btnLogout');
-        this.bindLogout();
-        */
+        this.createActivityButton = document.querySelector('#admin-create-activity-button');
 
+        this.manageUsersButton = document.querySelector('#admin-manage-users-button');
+        this.manageBadgesButton = document.querySelector('#admin-manage-badges-button');
+        this.manageItemsButton = document.querySelector('#admin-manage-items-button');
+
+        this.bindGoToLevelMenu();
+
+        this.bindProfile();
+        this.bindLeaderboard();
+
+        this.bindCreateActivity();
+        this.bindManageUsers();
+        this.bindManageBadges();
+        this.bindManageItems();
+
+        document.getElementById('coins').innerHTML = this.userController.getCoins();
+        document.getElementById('points').innerHTML = this.userController.getPoints();
 
         // Atualiza botões tendo em conta se o user está autenticado ou não
         this.updateStatusUI();
@@ -42,37 +41,73 @@ export default class UserView {
         console.alert("beep bop")
     }
 
-    /**
-     * Função que define um listener para o botão de registo
-     */
-    bindLandingPage() {
-        this.frmRegister.addEventListener('submit', event => {
-            event.preventDefault();
-            try {
-                if (this.registerPassword.value !== this.registerPassword2.value) {
-                    throw Error('Password and Confirm Password are not equal');
-                }
-                this.userController.register(this.registerUsername.value, this.registerPassword.value);
-                this.displayMessage('register', 'User registered with success!', 'success');
-                // Espera 1 seg. antes de fazer refresh à pagina
-                // Assim o utilizador pode ver a mensagem na modal antes de a mesma se fechar
-                setTimeout(() => { location.reload() }, 1000);
-            } catch (err) {
-                this.displayMessage('register', err, 'danger');
-            }
+    bindCreateActivity(){
+        this.createActivityButton.addEventListener('click', () => {
+            location.href = 'html/newActivity.html';
         })
     }
 
-  
-
-    /**
-     * Função que define e exibe uma mensagem de sucesso ou de erro
-     * @param {string} event tipo de evento (login ou register)
-     * @param {string} text mensagem a ser exibida 
-     * @param {string} type danger - caso seja uma mensagem de erro; success - caso seja uma mensagem de sucesso
-     */
-    displayMessage(event, text, type) {
-        const message = `<div class="alert alert-${type}" role="alert">${text}</div>`;
-        event == 'login' ? this.loginMessage.innerHTML = message : this.registerMessage.innerHTML = message
+    bindManageUsers(){
+        this.manageUsersButton.addEventListener('click', () => {
+            location.href = 'html/manageUsers.html';
+        })
     }
+
+    bindManageBadges(){
+        this.manageBadgesButton.addEventListener('click', () => {
+            location.href = 'html/manageBadges.html';
+        })
+    }
+
+    bindManageItems(){
+        this.manageItemsButton.addEventListener('click', () => {
+            location.href = 'html/manageItems.html';
+        })
+    }
+
+    bindGoToLevelMenu() {
+        this.playButton.addEventListener('click', () => {
+            location.href = 'html/levelMenu.html';
+        })
+    }
+
+    bindProfile(){
+        this.profile.addEventListener('click', event => {
+            location.href = '/html/profile.html';
+        })
+    }
+
+    bindShop(){
+        this.shop.addEventListener('click', event => {
+            location.href = '/html/shop.html';
+        })
+    }
+
+    bindLeaderboard(){
+        this.leaderboard.addEventListener('click', event => {
+            location.href = '/html/leaderboard.html';
+        })
+    }
+
+    updateStatusUI() {
+        if (this.userController.isLogged()) {
+            this.landingPage.style.display = 'none'
+            this.dashboard.style.display = 'block'
+            this.adminPage.style.display = 'none'
+
+            if (this.userController.isAdmin())
+            {
+                this.adminPage.style.display = 'block'
+                this.landingPage.style.display = 'none'
+                this.dashboard.style.display = 'none'
+            }
+
+        } else {
+            this.adminPage.style.display = 'none'
+            this.landingPage.style.display = 'block'
+            this.dashboard.style.display = 'none'
+        }
+    }
+
+
 }

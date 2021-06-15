@@ -1,11 +1,10 @@
 export default class ActivityModel {
-    constructor(title, description, coinsAwarded, pointsAwarded, options, activityType, requirements) {
-        this.title = title,
-        this.description = description || "",
+    constructor(id, activityType, coinsAwarded, pointsAwarded, questions, requirement) {
+        this.id = id,
+        this.activityType = activityType,
         this.coinsAwarded = coinsAwarded || 0,
         this.pointsAwarded = pointsAwarded || 0,
-        this.options = options,
-        this.activityType = activityType,
-        this.requirements = requirements || ""
+        this.questions = questions,
+        this.requirement = requirement || ""
     }
 }
