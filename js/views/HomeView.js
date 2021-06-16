@@ -43,49 +43,49 @@ export default class UserView {
 
     bindCreateActivity(){
         this.createActivityButton.addEventListener('click', () => {
-            location.href = '/html/newActivity.html';
+            location.href = 'html/newActivity.html';
         })
     }
 
     bindManageUsers(){
         this.manageUsersButton.addEventListener('click', () => {
-            location.href = '/html/manageUsers.html';
+            location.href = 'html/manageUsers.html';
         })
     }
 
     bindManageBadges(){
         this.manageBadgesButton.addEventListener('click', () => {
-            location.href = '/html/manageBadges.html';
+            location.href = 'html/manageBadges.html';
         })
     }
 
     bindManageItems(){
         this.manageItemsButton.addEventListener('click', () => {
-            location.href = '/html/manageItems.html';
+            location.href = 'html/manageItems.html';
         })
     }
 
     bindGoToLevelMenu() {
         this.playButton.addEventListener('click', () => {
-            location.href = '/html/levelMenu.html';
+            location.href = 'html/levelMenu.html';
         })
     }
 
     bindProfile(){
         this.profile.addEventListener('click', event => {
-            location.href = '/html/profile.html';
+            location.href = 'html/profile.html';
         })
     }
 
     bindShop(){
         this.shop.addEventListener('click', event => {
-            location.href = '/html/shop.html';
+            location.href = 'html/shop.html';
         })
     }
 
     bindLeaderboard(){
         this.leaderboard.addEventListener('click', event => {
-            location.href = '/html/leaderboard.html';
+            location.href = 'html/leaderboard.html';
         })
     }
 
