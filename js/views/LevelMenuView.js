@@ -115,7 +115,7 @@ export default class LevelMenuView {
 
                 this.activityController.setCurrentActivity(levelMenuButton.children[0].id)
 
-                location.href = '/html/level.html';
+                location.href = 'html/level.html';
 
             })
         }
